@@ -45,12 +45,12 @@ def Decisionmaking2()->None:
     while pro!="":
         weight=int(input("please enter a weight to that parameter(1 for not so important, 5 for very important)\n")) #add support if ppl try to enter out of the range or strings
         pro_count+=1
-        tracker.setdefault(pro,weight)
+        pro_tracker.setdefault(pro,int(weight))
         pro=input("please enter another benefit of {}\n".format(decision))
     con=input("please enter a drawback of {}\nIf there are no drawbacks just hit enter!\n".format(decision))
     while con!="":
         weight=int(input("please enter a weight to that parameter(1 for not so important, 5 for very important)\n"))
         con_count+=1
-        tracker.setdefault(con,int(weight))
+        con_tracker.setdefault(con,int(weight))
         pro=input("please enter another benefit of {}\n".format(decision))
         

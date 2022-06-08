@@ -9,7 +9,8 @@ def Decisionmaking()-> None:
     decision=input("please enter a short description of your decision in this format: GOING TO THE GYM\n")
     pro_count=0
     con_count=0
-    pro=input("please enter a benefit of {}\nIf there are no benefits just hit enter!\n".format(decision)) #I can add support for the ing/preterit
+    pro=input("please enter a benefit of {}\nIf there are no benefits just hit enter!\n".format(decision))
+    #I can add support for the ing/preterit
     #Maybe assign weight later
     #The reason for hesitating about weights is because I want the script to remain as simple as possible
     #weight can be added by changing the PROS data sructure into a dictionnary and using the pros as key and the weight as value
@@ -26,13 +27,25 @@ def Decisionmaking()-> None:
         keyword=keyword.replace("ing","")
         decision=decision.replace(decision.split()[0],keyword) 
     if con_count<pro_count:
-        print("You should definitely {0}!!".format(decision))
+        print("You should definitely {0}!!".format(decision.upper()))
     elif con_count>pro_count:
-        print("You should not {0}!!".format(decision))
+        print("You should not {0}!!".format(decision.upper()))
     else: 
-        print("Unfortunately this script cannot help you I am currently working on an improved version!!\n Stay tuned on my GitHub and thank for the support!")
+        print("How about we try assigning weight to these pros and cons")
+        #Decisionmaking2()
     print("THANK YOU FOR TRUSTING MY DECISION SCRIPT!!!")
-Decisionmaking()
+
+def UI()->None:
+    mode=input("(S)tandard or (A)dvanced Mode? (I)nfo")
+    if mode=="S":
+        Decisionmaking()
+    elif mode=="A":
+        Decisionmaking2()
+    elif mode=="I":
+        print("Press S for the Standard mode. The standard mode just counts the pros and cons and take a rationnal decision based on that.")
+        print("Press A for the Advanced mode. The advanced mode adds weight to pros and cons and take a rationnal decision based on that.")
+        print("At the moment of writing this I am planning on programming two more modes. The 2D matrix mode much more elaborate and allowing for more nuance./nand teh")
+        print("Press I to print out this menu")
 
 def Decisionmaking2()->None:
     Description()
@@ -54,3 +67,5 @@ def Decisionmaking2()->None:
         con_tracker.setdefault(con,int(weight))
         pro=input("please enter another benefit of {}\n".format(decision))
         
+if __name__==__main__:
+    UI()

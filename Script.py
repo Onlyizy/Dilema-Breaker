@@ -1,7 +1,7 @@
 def Description()-> str:
     VERSION= 1.0
     print ("VERSION {0}".format(VERSION))
-    print("Dilema Breaker is a quick python script I wrote one day at work\nunsure about whether to buy a snack")
+    print("Dilema Breaker is a quick python script I wrote one day at work\nunsure about whether to buy a snack or not...")
     return None
 def Decisionmaking()-> str:
     Description()

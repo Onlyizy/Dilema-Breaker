@@ -23,8 +23,9 @@ def Decisionmaking()-> None:
         con_count+= 1
         con=input("please enter another drawback of {}:\n".format(decision))
     keyword=decision.split()[0].lower()
-    if keyword[-1]=="g" and keyword[-2]=="n" and keyword[-3]=="i":
+    if keyword.endswith("ing") and len(keyword)>4 and keyword!= "bring":
         keyword=keyword.replace("ing","")
+        if keyword.endswith("o") or keyword.endswith("ch") or keyword.endswith("ss") or keyword.endswith("in") or 
         decision=decision.replace(decision.split()[0],keyword) 
     if con_count<pro_count:
         print("You should definitely {0}!!".format(decision.upper()))
